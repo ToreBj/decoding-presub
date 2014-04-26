@@ -72,7 +72,91 @@ semantics for messages transferred to remote equipment.</p>
 <p>The MMT-7305NA was designed to exchange all messages that remote
 equipment supports, but no instructions on usage are available from
 its sponsor.</p>
-<p>The messages facilitate creating a record of treatment.</p>
+<p>The messages facilitate creating a record of treatment.
+Should patients be able to get a copy of their records as the pump
+produces them?</p>
+<blockquote>
+<div><ul class="simple">
+<li>What if the vendor software does not work?</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>How does use of MMT-7305NA affect remote equipment, ie battery life
+of pump, total number of capitance charge cycles, etc...<ul>
+<li>Is this
+part of intended use of MMT-7305NA?</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="commands">
+<h4>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h4>
+<p>The MMT-7305NA is capable of exchanging many different types of
+commands, each with a different intended purpose.  Are each of these
+certified/pre-subed separately?  Different equipment and models
+respond differently to different commands.  Are there any indications
+how these commands are intended to be used with these devices?</p>
+<ul>
+<li><p class="first">What if decocare only sends commands supported by each device?
+* Does it stay within the intended use of vendor?</p>
+</li>
+<li><p class="first">What is intended use case for the remote control?
+* If the remote exchanges a message to bolus, a new tool, eg,</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">mm-send-bolus-example.py</span></tt> both send the exact same message,
+is the tool covered by the remote&#8217;s use case?</p>
+</div></blockquote>
+</li>
+<li><p class="first">Are there commands which trigger otherwise unexpected behavior?
+* Are there firmware bugs known to exist in different models, eg</p>
+<blockquote>
+<div><p>1.16 vs 1.17, suspend bug?</p>
+</div></blockquote>
+<ul class="simple">
+<li>If some commands are less stable with regard to behavior in the
+firmware, should the vendor share this information with users of
+the device?  Should it be in the instruction manual?</li>
+</ul>
+</li>
+</ul>
+<p>Should MMT1&#8217;s commands be documented so that users know what each
+command is intended to do?</p>
+</div>
+<div class="section" id="fault-responsibility">
+<h4>Fault / responsibility<a class="headerlink" href="#fault-responsibility" title="Permalink to this headline">¶</a></h4>
+<p>If something goes wrong who is at fault?
+Depends on what goes wrong whether or not device was used according to
+intended use or not.  What is the intended use of the MMT-7305NA, how
+will users use it, how do users get support?</p>
+</div>
+<div class="section" id="future-software-devices">
+<h4>Future software devices<a class="headerlink" href="#future-software-devices" title="Permalink to this headline">¶</a></h4>
+<p>Authors using decocare could create additional tools:</p>
+<ul>
+<li><p class="first">logging
+* log all history
+* query for recent history</p>
+</li>
+<li><p class="first">audit
+* create log of device behavior
+* injury/adverse event reporting tool might</p>
+<blockquote>
+<div><p>automatically compile report of all injurious events in therapy
+history and submit to FDA</p>
+</div></blockquote>
+</li>
+<li><p class="first">bolus wizard
+* bolus wizard on the web/browser
+* bolus wizard on mobile
+* bolus wizard from laptop
+* bolus wizard from data management software</p>
+</li>
+<li><p class="first">artificial pancreas
+* auto suspend
+* auto temp basal
+* auto bolus</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="g-specific-questions">
@@ -98,7 +182,12 @@ type.</p>
   <ul>
 <li><a class="reference internal" href="#">Specific Questions</a><ul>
 <li><a class="reference internal" href="#intended-use">Intended use</a><ul>
-<li><a class="reference internal" href="#use-of-mmt-7305na">Use of MMT-7305NA</a></li>
+<li><a class="reference internal" href="#use-of-mmt-7305na">Use of MMT-7305NA</a><ul>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+<li><a class="reference internal" href="#fault-responsibility">Fault / responsibility</a></li>
+<li><a class="reference internal" href="#future-software-devices">Future software devices</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#g-specific-questions">g. Specific Questions</a></li>
