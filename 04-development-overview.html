@@ -51,8 +51,28 @@
             
   <div class="section" id="overview-of-product-development">
 <h1>Overview of Product Development<a class="headerlink" href="#overview-of-product-development" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="f-overview-of-product-development">
-<h2>f. Overview of Product Development<a class="headerlink" href="#f-overview-of-product-development" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="development-of-decocare">
+<h2>Development of decocare<a class="headerlink" href="#development-of-decocare" title="Permalink to this headline">¶</a></h2>
+<p>The library was developed by via careful analysis of messages passed
+between Medtronic&#8217;s Carelink software, blood glucose meters equipped
+with the feature known as <tt class="docutils literal"><span class="pre">meter-link</span></tt>, Medtronic&#8217;s pump remote
+control, Carelink software, and the carelink usb stick.</p>
+<p>Messages from the Carelink data management application software were
+analyzed for structure and semantics.  Python code was then written to
+recreate the messages needed to successfully transfer data from remote
+equipment to a local application.  The full logs and output from each
+experiment were captured in git for additional debugging and perusal.</p>
+<p>The software includes a suite of tests.  Many of the tests will
+prevent the software from running in an abnormal condition is found
+in the tests.  The Carelink USB stick offers a facility for counting
+how many messages have been sent and recieved in error, corrupted, or
+successfully.  All experiments capture the status of these counters at
+the beginning and end of each use to provide diagnostic information on
+the operation of the usb stick.  This information can be helpful in
+determining if the protocol is exchanging messages as Medtronic
+intended.</p>
+<div class="section" id="instructions">
+<h3>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h3>
 <p>Please provide an overview of the product development, including an
 outline of nonclinical and clinical testing either planned or already
 completed. However, please note that our review of a Pre-Sub will not
@@ -62,6 +82,7 @@ collected.</p>
 part of this section, please try to include only those that are
 relevant to the questions you are asking.  Additional articles can be
 provided in any subsequent marketing application or IDE.</p>
+</div>
 </div>
 </div>
 
@@ -74,7 +95,10 @@ provided in any subsequent marketing application or IDE.</p>
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Overview of Product Development</a><ul>
-<li><a class="reference internal" href="#f-overview-of-product-development">f. Overview of Product Development</a></li>
+<li><a class="reference internal" href="#development-of-decocare">Development of decocare</a><ul>
+<li><a class="reference internal" href="#instructions">Instructions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -89,6 +113,10 @@ provided in any subsequent marketing application or IDE.</p>
   <ul class="this-page-menu">
     <li><a href="_sources/04-development-overview.txt"
            rel="nofollow">Show Source</a></li>
+    <li><a href="https://github.com/medevice-users/decoding-presub/blob/master/source/04-development-overview.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/medevice-users/decoding-presub/edit/master/source/04-development-overview.rst"
+           rel="nofollow">Edit on GitHub</a></li>
   </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
