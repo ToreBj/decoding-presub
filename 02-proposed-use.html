@@ -70,13 +70,30 @@ application software.</div></blockquote>
 <h2>Intended Use of decocare<a class="headerlink" href="#intended-use-of-decocare" title="Permalink to this headline">¶</a></h2>
 <p>Provides methods and utilities to facilitate communication between
 Paradigm-compatible devices and data management application software.</p>
+<div class="section" id="observing-device-behavior">
+<h3>Observing device behavior<a class="headerlink" href="#observing-device-behavior" title="Permalink to this headline">¶</a></h3>
+<p>Decocare helps observe the behavior of MMT-7305NA and compatible
+medical devices in greater detail.  The tools expose diagnostic
+information regarding successful transmission of messages to the
+device, as well as allows users to precisely audit and log device
+behavior.</p>
+<p>A user may use the <tt class="docutils literal"><span class="pre">mm-send-comm.py</span></tt> tool to request and save a page
+of data, as it existed on the pump.</p>
+</div>
+<div class="section" id="creating-data-management-software">
+<h3>Creating data management software<a class="headerlink" href="#creating-data-management-software" title="Permalink to this headline">¶</a></h3>
+<p>Decocare allows python authors to create data management tools.
+Decocare transfers messages from a data management application
+to remote devices and back.  An application developer can use this
+facility to create a program which uses the <tt class="docutils literal"><span class="pre">ReadHistoryData</span></tt>
+command, decodes the information, and presents it to the user or saves
+it for later use.</p>
+</div>
 </div>
 <div class="section" id="frequency-of-use">
 <h2>Frequency of use<a class="headerlink" href="#frequency-of-use" title="Permalink to this headline">¶</a></h2>
 <p>We are unsure what Medtronic&#8217;s recommendation is regarding how
 frequently remote equipment may communicate with application software.</p>
-<div class="section" id="d-proposed-intended-use-indications-for-use">
-<h3>d. Proposed Intended Use/Indications for Use<a class="headerlink" href="#d-proposed-intended-use-indications-for-use" title="Permalink to this headline">¶</a></h3>
 <p>Please provide sufficient information regarding the proposed intended
 use/indications for use,</p>
 <p>which may include:</p>
@@ -97,7 +114,6 @@ the analyte/condition to detect, and the assay methodology (see
 Section F of Appendix 1 for more detailed information).</p>
 </div>
 </div>
-</div>
 
 
           </div>
@@ -109,11 +125,12 @@ Section F of Appendix 1 for more detailed information).</p>
   <ul>
 <li><a class="reference internal" href="#">Proposed Use</a><ul>
 <li><a class="reference internal" href="#intended-use-of-mmt-7305na">Intended Use of MMT-7305NA</a></li>
-<li><a class="reference internal" href="#intended-use-of-decocare">Intended Use of decocare</a></li>
-<li><a class="reference internal" href="#frequency-of-use">Frequency of use</a><ul>
-<li><a class="reference internal" href="#d-proposed-intended-use-indications-for-use">d. Proposed Intended Use/Indications for Use</a></li>
+<li><a class="reference internal" href="#intended-use-of-decocare">Intended Use of decocare</a><ul>
+<li><a class="reference internal" href="#observing-device-behavior">Observing device behavior</a></li>
+<li><a class="reference internal" href="#creating-data-management-software">Creating data management software</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#frequency-of-use">Frequency of use</a></li>
 </ul>
 </li>
 </ul>
