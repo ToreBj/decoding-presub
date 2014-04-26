@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Device Description &mdash; decoding-carelink FDA presubmission 0.0.1 documentation</title>
+    <title>ComLink2 Driver &mdash; decoding-carelink FDA presubmission 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -49,10 +49,100 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="device-description">
-<h1>Device Description<a class="headerlink" href="#device-description" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="comlink2-driver">
+<h1>ComLink2 Driver<a class="headerlink" href="#comlink2-driver" title="Permalink to this headline">¶</a></h1>
+<p>The device, <tt class="docutils literal"><span class="pre">decocare</span></tt>, is a comlink2 driver, a software library,
+which implements methods and functions to facilitate communication
+between Paradigm-compatible RF devices and data management application
+software using the Carelink USB stick from Medtronic (MMT-7305NA).</p>
+<p>The user&#8217;s guide:
+<a class="reference external" href="http://www.medtronicdiabetes.com/sites/default/files/library/support/carelink_usb_user_guide.pdf">http://www.medtronicdiabetes.com/sites/default/files/library/support/carelink_usb_user_guide.pdf</a>
+indicates intended use is:</p>
+<blockquote>
+<div>Indications for use The Medtronic CareLink™ USB is indicated for
+use by patients at home and clinicians in a medical office setting
+to facilitate communication between Medtronic diabetes therapy
+management devices that use Paradigm-compatible RF telemetry
+(MWT1)* and a personal computer that uses data management
+application software.</div></blockquote>
+<div class="section" id="device-description">
+<h2>Device Description<a class="headerlink" href="#device-description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="decocare-the-library">
+<h3>decocare - the library<a class="headerlink" href="#decocare-the-library" title="Permalink to this headline">¶</a></h3>
+<p>Decocare is the name of a python package, a re-usable suite of python
+source modules, which implements functions and methods to encode and
+decode messages compatible with the <tt class="docutils literal"><span class="pre">ComLink2</span></tt> protocol used by the
+MMT-7305NA Carelink USB stick.</p>
+<div class="section" id="usage">
+<h4>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h4>
+<p>The library allows authors of python source code to write methods
+needed to implement data management software.
+In order to use the library, authors need to download the python
+package, configure their local system to use the module, write new
+python source code implementing the desired remote management
+features, then execute their newly written source.</p>
+<p>The library contains a listing of different messages, commercially
+supported by Medtronic, allowing data management software to remotely
+communicate with compatible devices.</p>
+</div>
+<div class="section" id="dissemination">
+<h4>Dissemination<a class="headerlink" href="#dissemination" title="Permalink to this headline">¶</a></h4>
+<p>The source code is distributed using <tt class="docutils literal"><span class="pre">git</span></tt>, a version control
+system, ensuring that changes or versions of the source code are kept
+in sync.</p>
+<p>A user must know how to configure and use python modules and git in
+order to install the software on a local PC.</p>
+<p>The git repo, is hosted online <a class="reference external" href="https://github.com/bewest/decoding-carelink">https://github.com/bewest/decoding-carelink</a>
+available as an educational resource for discussing potential
+applications of remote management software.</p>
+<div class="section" id="installing">
+<h5>Installing<a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h5>
+<p>In order to run the software, the source must be retrieved, deployed
+and configured to run on a PC.  Currently the user must know how to
+perform these steps, the easiest way is on the commandline:</p>
+<blockquote>
+<div>git clone <a class="reference external" href="https://github.com/bewest/decoding-carelink.git">https://github.com/bewest/decoding-carelink.git</a>
+cd decoding-carelink
+sudo python setup.py install</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="mm-tools-investigational-tools">
+<h3>mm-* tools, investigational tools<a class="headerlink" href="#mm-tools-investigational-tools" title="Permalink to this headline">¶</a></h3>
+<p>Another set of devices are tools showing example usage of the library,
+and tools to investigate how the library and the serial protocol are
+used to communicate with the remote equipment work.</p>
+<p>These tools facilitate use of the decocare library to exchange
+messages with the usb stick, to audit the operation of the usb stick,
+as well as to exchange and record messages with remote RF equipment
+for debugging and analysis.</p>
+<p>After configuring and installing the tool, these tools allow
+initializing RF communications with compatible devices, exchanging a
+series of predefined or customized commands, and saving the results
+for later perusal.</p>
+<p>These tools support communicating with remote Paradigm-compatible
+equipment using commands supported by Medtronic in other commercial
+products, in exactly the same way as those products, from the command
+line, shell environment.  The following options allow users to control
+how remote equipment is uniquey addressed or distinguished from other
+compatible devices, and how communication begins.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">--init</span></tt></dt>
+<dd>Send remote signal to initialize RF communication.</dd>
+<dt><tt class="docutils literal"><span class="pre">--serial</span></tt></dt>
+<dd>Only communicates with the remote equipment responding to this
+serial number.  This matches the number, I.E. on the back of
+Medtronic insulin pumps.</dd>
+</dl>
+<p><tt class="docutils literal"><span class="pre">mm-send-comm.py</span></tt> allows sending or customizing commands Medtronic
+intends to support using their own software and devices.</p>
+<p><tt class="docutils literal"><span class="pre">mm-latest.py</span></tt> Example showing construction of data management
+software using the Carelink usb and protocol.  Uses same commands as
+Carelink in a demonstration to query the given minutes of history and
+pump activity.</p>
+</div>
 <div class="section" id="c-device-description">
-<h2>c. Device Description<a class="headerlink" href="#c-device-description" title="Permalink to this headline">¶</a></h2>
+<h3>c. Device Description<a class="headerlink" href="#c-device-description" title="Permalink to this headline">¶</a></h3>
 <p>Please provide sufficient information regarding the device description,
 25 which may include:</p>
 <ul class="simple">
@@ -86,6 +176,7 @@ guide or video of how the device is used in the clinical setting, may
 be helpful.26</p>
 </div>
 </div>
+</div>
 
 
           </div>
@@ -95,8 +186,20 @@ be helpful.26</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Device Description</a><ul>
+<li><a class="reference internal" href="#">ComLink2 Driver</a><ul>
+<li><a class="reference internal" href="#device-description">Device Description</a><ul>
+<li><a class="reference internal" href="#decocare-the-library">decocare - the library</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#dissemination">Dissemination</a><ul>
+<li><a class="reference internal" href="#installing">Installing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mm-tools-investigational-tools">mm-* tools, investigational tools</a></li>
 <li><a class="reference internal" href="#c-device-description">c. Device Description</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -111,6 +214,10 @@ be helpful.26</p>
   <ul class="this-page-menu">
     <li><a href="_sources/01-description.txt"
            rel="nofollow">Show Source</a></li>
+    <li><a href="https://github.com/medevice-users/decoding-presub/blob/master/source/01-description.rst"
+           rel="nofollow">Show on GitHub</a></li>
+    <li><a href="https://github.com/medevice-users/decoding-presub/edit/master/source/01-description.rst"
+           rel="nofollow">Edit on GitHub</a></li>
   </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
